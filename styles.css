@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #ffe6f7, #fff0f5);
+  color: #333;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.dark {
+  background: linear-gradient(to bottom, #2e0249, #120032);
+  color: #fff;
+}
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 2rem;
+  color: #ff69b4;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4; }
+  to { text-shadow: 0 0 20px #fff, 0 0 30px #ff1493; }
+}
+
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.character-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
+}
+
+.character-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  border: 3px solid #ffb6c1;
+}
+
+.enter-button-wrapper {
+  text-align: center;
+  margin: 2rem;
+}
+
+.enter-button {
+  background: linear-gradient(to right, #ff69b4, #ff1493);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.enter-button:hover {
+  transform: scale(1.1);
+}
+
+.sparkle {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #fffacd, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: glitter 1s ease-out forwards;
+  z-index: 9999;
+  box-shadow: 0 0 10px #ff69b4, 0 0 20px #ffb6c1, 0 0 30px #ffe4e1;
+}
+
+@keyframes glitter {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+
