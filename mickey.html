@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mickey's Magic Playground</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Neue', cursive;
+      overflow-x: hidden;
+      background: url('Micky Grp.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      transition: background 1s, color 0.5s;
+    }
+
+    
+
+    h1 {
+      text-align: center;
+      margin-top: 80px;
+      font-size: 64px;
+      font-family: 'Pacifico', cursive;
+      color: white;
+      text-shadow: 0 0 10px #fff, 0 0 20px #f8c471, 0 0 30px #f7dc6f;
+      animation: glow 2s infinite alternate;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    h1:hover {
+      transform: scale(1.1) rotate(-2deg);
+      text-shadow: 0 0 20px #fff, 0 0 30px #f4d03f, 0 0 40px #f1c40f;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #f8c471, 0 0 15px #f7dc6f;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #f8c471, 0 0 40px #f7dc6f;
+      }
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 50px;
+      gap: 40px;
+    }
+
+    .card {
+      width: 250px;
+      perspective: 1000px;
+      transition: transform 0.5s;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card img:hover {
+      transform: rotateY(20deg) scale(1.1);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+    }
+
+    .star {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: radial-gradient(circle, yellow, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: sparkle 1.5s linear forwards;
+      box-shadow: 0 0 8px #ffff66, 0 0 15px #ffff66;
+    }
+
+    .glitter-star {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: url('https://i.imgur.com/MvJ2gUc.png') no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+      animation: glitterFade 1.2s linear forwards;
+    }
+
+    @keyframes sparkle {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(2); }
+    }
+
+    @keyframes glitterFade {
+      0% { opacity: 1; transform: scale(0.8); }
+      100% { opacity: 0; transform: scale(1.5); }
+    
+    }
+
+
+    .back-link {
+  display: block;
+  text-align: center;
+  margin: 60px auto 40px;
+  font-size: 28px;
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 30px;
+  border: 3px solid #f7dc6f;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #f8c471, #f1c40f);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3),
+              inset 0 0 10px #fff3b0,
+              0 0 20px #f7dc6f;
+  transition: all 0.4s ease;
+  animation: shimmer 2s infinite linear;
+  position: relative;
+  z-index: 1;
+}
+
+.back-link::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 25px;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.3) 0%,
+    rgba(255,255,255,0.8) 50%,
+    rgba(255,255,255,0.3) 100%
+  );
+  z-index: -1;
+  transform: skewX(-20deg) translateX(-100%);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: skewX(-20deg) translateX(-100%); }
+  100% { transform: skewX(-20deg) translateX(200%); }
+}
+
+@keyframes shimmer {
+  0% { text-shadow: 0 0 5px #fff6a3, 0 0 15px #ffe066; }
+  50% { text-shadow: 0 0 15px #fffacd, 0 0 25px #ffe066; }
+  100% { text-shadow: 0 0 5px #fff6a3, 0 0 15px #ffe066; }
+}
+
+.back-link:hover {
+  transform: scale(1.1) rotate(-1deg);
+  background: linear-gradient(145deg, #f1c40f, #f8c471);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.4),
+              inset 0 0 15px #fff9c4,
+              0 0 25px #ffeb3b;
+  color: #fff;
+}
+
+  </style>
+</head>
+<body>
+  
+
+  <h1>Welcome to Mickey's Magic World</h1>
+
+  <div class="gallery">
+    <div class="card"><img src="MickeyMouse.webp" alt="Mickey" /><h2> Mickey Mouse</h2></div>
+    <div class="card"><img src="minnie.jpg" alt="Minnie" /><h2> Minnie Mouse</h2></div>
+    <div class="card"><img src="Donald.webp" alt="Donald" /><h2> Donald Ducky</h2></div>
+    <div class="card"><img src="goofy.jpg" alt="Goofy" /><h2> GOOFYYY</h2></div>
+    <div class="card"><img src="pluto.jpg" alt="Pluto" /><h2> Pluto...</h2></div>
+    </div>
+
+     <a href="index.html" class="back-link">← Back to Disney Island</a>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    document.body.addEventListener('mousemove', (e) => {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.left = `${e.pageX}px`;
+      star.style.top = `${e.pageY}px`;
+      document.body.appendChild(star);
+      setTimeout(() => star.remove(), 1500);
+
+      const glitter = document.createElement('div');
+      glitter.classList.add('glitter-star');
+      glitter.style.left = `${e.pageX + Math.random() * 10}px`;
+      glitter.style.top = `${e.pageY + Math.random() * 10}px`;
+      document.body.appendChild(glitter);
+      setTimeout(() => glitter.remove(), 1200);
+    });
+  </script>
+</body>
+</html>
