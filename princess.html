@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Princess Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 40px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      color: #e91e63;
+      transition: background 0.4s, color 0.4s;
+      overflow-x: hidden;
+    }
+
+    body.dark-mode {
+      background-color: #1e1e2f;
+      color: #fcdff0;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 10px;
+      background: #ffc0cb;
+      border: none;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      margin-bottom: 30px;
+    }
+
+    .princess-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .princess-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(255, 105, 180, 0.4);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeIn 1s ease-in;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .princess-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px 10px #ffc0cb;
+    }
+
+    .princess-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .princess-card p {
+      font-size: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .dark-mode .princess-card {
+      background: #2a2a3d;
+      color: #fcdff0;
+    }
+
+    /* Sparkle animation */
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.8; transform: scale(1) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+    }
+
+    .sparkle::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: radial-gradient(circle, #ff69b4 20%, transparent 20%),
+                        radial-gradient(circle, #ff69b4 20%, transparent 20%);
+      background-size: 10px 10px;
+      background-position: 0 0, 5px 5px;
+      animation: sparkle 2s infinite linear;
+      z-index: 1;
+      mix-blend-mode: screen;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="document.body.classList.toggle('dark-mode')">Magic Button</button>
+
+  <h1>Meet the Princesses</h1>
+
+  <div class="princess-grid">
+    <div class="princess-card sparkle">
+      <img src="Rapunzel.jpg" alt="Rapunzel" />
+      <p>Rapunzel is known for her magical long hair and adventurous spirit. She dreams beyond the tower walls.</p>
+    </div>
+    <div class="princess-card sparkle">
+      <img src="Cindrella.jpg" alt="Cinderella" />
+      <p>Cinderella is kind and graceful. Despite hardship, she believes in magic and love.</p>
+    </div>
+    <div class="princess-card sparkle">
+      <img src="Ariel.png" alt="Ariel" />
+      <p>Ariel is curious and brave, willing to explore new worlds for her dreams.</p>
+    </div>
+    <div class="princess-card sparkle">
+      <img src="Belle.jpeg" alt="Belle" />
+      <p>Belle values wisdom and kindness. Her love for books opens doors to adventure.</p>
+    </div>
+    <div class="princess-card sparkle">
+      <img src="Elsa.jpg" alt="Elsa" />
+      <p>Elsa embraces her icy powers while learning to open her heart and lead with strength.</p>
+    </div>
+    <div class="princess-card sparkle">
+      <img src="Snow white.jpg" alt="Snow White" />
+      <p>Snow White is gentle and cheerful. Her kindness brings light to even the darkest days.</p>
+    </div>
+    <div class="princess-card sparkle">
+      <img src="Aurora.webp" alt="Aurora" />
+      <p>Aurora, also known as Sleeping Beauty, brings grace and serenity with her peaceful presence and dreams of true love.</p>
+    </div>
+    <div class="princess-card sparkle">
+      <img src="Miana.jpg" alt="Moana" />
+      <p>Moana is a fearless explorer who follows her heart across the ocean to save her people with courage and determination.</p>
+    </div>
+  </div>
+
+</body>
+</html>
